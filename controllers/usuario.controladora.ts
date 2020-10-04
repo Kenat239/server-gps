@@ -1,5 +1,4 @@
 import usuarios from '../models/usuario';
-import { IUsuario } from '../models/usuario';
 
 
 
@@ -77,7 +76,7 @@ export async function GetActiveUsers() {
 // Modificar Usuarios
 // ==========================
 
-export async function ModifyUser(id:any, usuario:IUsuario) {
+export async function ModifyUser(id:any, usuario:any) {
     return usuarios.findByIdAndUpdate(id, usuario, {new:true})
     .then( (user:any) => {
         return user;

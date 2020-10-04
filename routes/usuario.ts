@@ -3,6 +3,7 @@ import bcrypt from 'bcrypt';
 import * as usuario from '../controllers/usuario.controladora';
 
 
+
 const usuarioRoutes = Router();
 
 // ========================================================
@@ -16,7 +17,7 @@ usuarioRoutes.post('/', async ( req:Request, res: Response ) => {
         body.apellidoP,
         body.apellidoM,
         body.email,
-        bcrypt.hashSync( body.password, 10),
+        bcrypt.hashSync(body.password, 10),
         body.rol,
         body.vehiculo
     )

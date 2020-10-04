@@ -1,5 +1,4 @@
 import { Request, Response, Router } from 'express';
-import { IUsuario } from '../models/usuario';
 import bcrypt from 'bcrypt';
 import * as log from '../controllers/usuario.controladora';
 import jwd from 'jsonwebtoken';

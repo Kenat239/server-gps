@@ -1,18 +1,7 @@
-import mongoose, {Document,model,Schema, Types} from 'mongoose';
+import mongoose, {model,Schema, Types} from 'mongoose';
 import mongooseUniqueValidator = require ('mongoose-unique-validator');
 
 
-export interface IUsuario extends Document {
-    nombre: string;
-    apellidoP: string;
-    apellidoM: string;
-    email: string;
-    password: string;
-    rol:string;
-    status:string;
-    vheiculo:string
-    img?:string;
-}
 
 const rolesValidos = {
     values: [ 'ADMIN_ROL', 'DRIVER_ROL' ],
@@ -33,5 +22,5 @@ const usuarioSchema: Schema = new Schema ({
 
 usuarioSchema.plugin(mongooseUniqueValidator, { message: '{PATH} debe ser unico' } );
 
-export default mongoose.model<IUsuario>('Usuario', usuarioSchema);
+export default mongoose.model('Usuario', usuarioSchema);
 
